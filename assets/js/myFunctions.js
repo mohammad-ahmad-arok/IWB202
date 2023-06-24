@@ -395,11 +395,17 @@ function chickID() {
 
 
 function chickNumber() {
+
+
   // get element
   const Number=document.getElementById('Number'),
       warningNumber=document.getElementById('warning-Number');
 
-      if (Number.value.match(/[^\d]/g, '')) {
+    // select valed value 
+  let allPrefix=[99,98,93,94,95,96];
+  let prefix=Number.value.substr(0,2);
+
+      if (Number.value.match(/[^\d]/g, '') && !(allPrefix.includes(prefix) )) {
         warningNumber.style.display="block";
        
       }
