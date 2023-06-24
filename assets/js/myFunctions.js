@@ -408,11 +408,6 @@ function chickNumber() {
        
       }  
 }
- 
-
-
-      
-}
 
 // Generate captcha
 
