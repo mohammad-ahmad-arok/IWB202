@@ -295,7 +295,7 @@ function moreDatels(index) {
 <label for="Number">Number</label>
 <div class="input-number">
 <span>+963</span>
-<input type="text" id="Number"   oninput='chickNumber()' maxlength='10'  placeholder=" ادخل رقم الموبايل " required>
+<input type="text" id="Number"   oninput='chickNumber()' maxlength='9'  placeholder=" ادخل رقم الموبايل " required>
 </div> 
 <div class="masseges-worning"  id='warning-Number'>غير صحيح</div>
 </div>
@@ -395,25 +395,23 @@ function chickID() {
 
 
 function chickNumber() {
-
-
   // get element
-  const Number=document.getElementById('Number'),
+  const numberValue=document.getElementById('Number').value,
       warningNumber=document.getElementById('warning-Number');
+      let allPrefix=['99','98','93','94','95','96'];
+    // numberValue.match(/[^\d]/g, ''
 
-    // select valed value 
-  let allPrefix=[99,98,93,94,95,96];
-  let prefix=Number.value.substr(0,2);
-
-      if (Number.value.match(/[^\d]/g, '') && !(allPrefix.includes(prefix) )) {
+    if (!allPrefix.includes(numberValue.toString().substring(0,2)) ) {
+      if ( ! /^\d{9}$/.test(numberValue) ) {
         warningNumber.style.display="block";
-       
       }
-      else{
+    }else{
         warningNumber.style.display="none";
-       
-
       }
+ 
+
+
+      
 }
 
 // Generate captcha
