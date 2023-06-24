@@ -401,13 +401,13 @@ function chickNumber() {
       let allPrefix=['99','98','93','94','95','96'];
     // numberValue.match(/[^\d]/g, ''
 
-    if (!allPrefix.includes(numberValue.toString().substring(0,2)) ) {
-      if ( ! /^\d{9}$/.test(numberValue) ) {
-        warningNumber.style.display="block";
-      }
-    }else{
+    if ((allPrefix.includes(numberValue.toString().substring(0,2)) && (  /^[0-9]*$/.test(numberValue) )) ) {
         warningNumber.style.display="none";
-      }
+    }else{ 
+      warningNumber.style.display="block";
+       
+      }  
+}
  
 
 
